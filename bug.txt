@@ -1,0 +1,9 @@
+Add出现异常了
+异常名称：ArithmeticException
+异常名原因：/ by zero
+---------------------
+Div出现异常了
+异常名称：ArithmeticException
+异常名原因：/ by zero
+---------------------
+本次异常出现2次异常！

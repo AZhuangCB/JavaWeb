@@ -1,0 +1,39 @@
+JDK中预定义的一些注解
+*@override：检测被该注解标注的方法是否是继承自父类（接口）的
+*@deprecated：该注解标志的内容，表示已过时
+*@suppresswarnings：压制警告
+        一般传递参数“all”
+
+自定义注解：
+    格式：
+        public @interface 注解名称{
+            属性列表
+        }
+    本质：
+        注解本质上就是一个接口，该接口默认继承Annotation接口
+            public interface MyAnno extends java.lang.annotation.annotation{}
+    属性：接口中的抽象方法
+        要求：
+            1.属性的返回值类型：
+                基本数据类型
+                String
+                枚举
+                注解
+                以上类型的数组
+                （不包括void）
+            2.定义了属性，在使用时需要给属性赋值。
+                如果定义属性时，使用default赋默认值,则在使用时可以不赋值。
+                如果只有一个属性需要复制，并且属性的名称时value，则在使用时不用写"value=".
+                数组赋值时，用{}包裹，如果{}中只有一个值，{}可以省略。
+
+    元注解：用于描述注解的注解。
+        @Target:表示描述注解能够作用的位置
+            ElementType取值：
+                TYPE：可以作用于类上
+                METHOD:可以作用于方法上
+                FIELD：可以作用于成员变量上
+        @Retention:描述注解能被保留的阶段
+        @Documented:描述注解是否能被抽取到api文档中
+        @Inherited:描述注解是否被子类集继承
+
+在程序中解析注解
